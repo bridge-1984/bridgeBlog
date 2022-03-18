@@ -1,32 +1,37 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div>
+    <blog-head></blog-head>
+    <router-view></router-view>
+    <blog-foot></blog-foot>
+    <to-top></to-top>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+// 导入头部导航
+import BlogHead from '@/components/BlogNav.vue'
 
-nav {
-  padding: 30px;
+// 导入页尾
+import BlogFoot from '@/components/BlogFoot.vue'
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+import ToTop from '@/components/ToTop.vue'
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  components: {
+    BlogHead,
+    BlogFoot,
+    ToTop
   }
 }
+</script>
+
+<style lang='less'>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  body{
+    background-color: #eff0f2;
+    font-family: "Arial", "Microsoft YaHei", "\9ED1\4F53", "\5B8B\4F53", sans-serif;
+  }
 </style>
